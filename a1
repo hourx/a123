@@ -1,61 +1,20 @@
-<head>
-    <title>
-        How to call PHP function
-        on the click of a Button ?
-    </title>
-</head>
 <?php
 
-  if(array_key_exists('button1', $_POST)) {
-    button1();
-}
-else if(array_key_exists('button2', $_POST)) {
-    button2();
-}
-function button1() {
-    $mysqli = new mysqli("localhost","root","","abc");
-    if ($mysqli -> connect_errno) {
-      echo "Failed to connect to MySQL: " . $mysqli -> connect_error;
-      exit();
-    }
-    $sql = "INSERT INTO a111 (name1, mail, age)
-    VALUES ('4', '5', '6')";
-    if (mysqli_query($mysqli, $sql)) {
-        echo "New record created successfully";
-      } else {
-        echo "Error: " . $sql . "<br>" . mysqli_error($mysqli);
-      };
-}
-function button2() {
-    $mysqli = new mysqli("localhost","root","","abc");
-    if ($mysqli -> connect_errno) {
-      echo "Failed to connect to MySQL: " . $mysqli -> connect_error;
-      exit();
-    }
-    $sql = "INSERT INTO a111 (name1, mail, age)
-    VALUES ('7', '8', '9')";
-    if (mysqli_query($mysqli, $sql)) {
-        echo "New record created successfully";
-      } else {
-        echo "Error: " . $sql . "<br>" . mysqli_error($mysqli);
-      };
-
-}
-
-
-    ?>
-</head>
-  
-<body>
-  
-      
-    
-    <form method="post">
-        <input type="submit" name="button1"
-                class="button" value="Button1" />
-          
-        <input type="submit" name="button2"
-                class="button" value="Button2" />
-    </form>
+?>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Laragon</title>
+    </head>
     <body>
+    <form action="/index.php">
+  <input type="radio" id="html" name="fav_language" value="HTML">
+  <label for="html">HTML</label><br>
+  <input type="radio" id="css" name="fav_language" value="CSS">
+  <label for="css">CSS</label><br>
+  <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+  <label for="javascript">JavaScript</label><br><br>
+  <input type="submit" value="Submit">
+</form>
+    </body>
 </html>
